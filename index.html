@@ -235,12 +235,7 @@ html {
           <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2017<br>, under review for ICLR 2018
         </p>
         <p>
-         We learns an attention mechanism
-         over the hidden states in the past and selectively
-         backpropagates through paths with high
-         attention weight. This allows the model to learn
-         long term dependencies while only backtracking
-         for a small number of steps into the past. We think, its an efficient way of doing credit assignment in time.
+        A major drawback of backpropagation through time (BPTT) is the difficulty of learning long-term dependencies, coming from having to propagate credit information backwards through every single step of the forward computation. This makes BPTT both computationally impractical and biologically implausible. For this reason, full backpropagation through time is rarely used on long sequences, and truncated backpropagation through time is used as a heuristic. However, this usually leads to biased estimates of the gradient in which longer term dependencies are ignored. Addressing this issue, we propose an alternative algorithm, Sparse Attentive Backtracking, which might also be related to principles used by brains to learn long-term dependencies. Sparse Attentive Backtracking learns an attention mechanism over the hidden states of the past and selectively backpropagates through paths with high attention weights. This allows the model to learn long term dependencies while only backtracking for a small number of time steps, not just from the recent past but also from attended relevant past states.
         </p>
         </td>
        </tr>
@@ -399,6 +394,45 @@ states).
             </tr>
 
 
+        <tr onmouseout="ssrl_stop()" onmouseover="ssrl_start()">
+          <td width="25%">
+
+                  <heading2><i></i></heading2><br>
+            <div class="one">
+                <div class="two" id="ssrl_image" style="opacity: 0;"><img src="./files/zoneout.png" width=150 height=130></div>
+                <img src="./files/zoneout.png" width=150 height=130>
+            </div>
+            <script type="text/javascript">
+            function ssrl_start() {
+              document.getElementById('ssrl_image').style.opacity = "1"; 
+            }   
+            function ssrl_stop() {
+              document.getElementById('ssrl_image').style.opacity = "0";
+            } 
+            ssrl_stop()
+            </script>
+
+              </td>
+              <td valign="top" width="75%">
+              <p><a href="https://arxiv.org/abs/1606.01305">
+                <papertitle>A Deep Reinforcement Learning Chatbot</papertitle></a><br>
+            Iulian V. Serban, Chinnadhurai Sankar, Mathieu Germain, Saizheng Zhang, Zhouhan Lin,
+Sandeep Subramanian, Taesup Kim, Michael Pieper, Sarath Chandar, <strong> Nan Rosemary Ke</strong>,
+Sai Rajeshwar, Alexandre de Brebisson, Jose M. R. Sotelo, Dendi Suhubdy,
+Vincent Michalski, Alexandre Nguyen, Joelle Pineau and Yoshua Bengio
+              <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
+              <a href="https://aaroncourville.wordpress.com/">Aaron Courville</a> <br>
+              <a href="www.professeurs.polymtl.ca/christopher.pal/">Chris Pal</a> <br>
+              <em>International Conference on Learning Representations (ICLR)</em>, 2017 <br> <!-- &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font> <br-->
+                <a href="https://arxiv.org/abs/1606.01305">arXiv</a>
+                /
+                <a href="https://github.com/teganmaharaj/zoneout">code</a>
+              </p><p></p>
+              <p>
+              We propose zoneout, a novel method for regularizing RNNs. At each timestep, zoneout stochastically forces some hidden units to maintain their previous values. Like dropout, zoneout uses random noise to train a pseudo-ensemble, improving generalization. But by preserving instead of dropping hidden units, gradient information and state information are more readily propagated through time, as in feedforward stochastic depth networks.
+              </p>
+              </td>
+            </tr>
 
 
         <tr onmouseout="ssrl_stop()" onmouseover="ssrl_start()">
