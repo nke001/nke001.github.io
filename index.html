@@ -205,6 +205,42 @@ html {
             </tr>
             -->
 
+        <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
+          <td width="25%">
+            <div class="one">
+                <div class="two" id="sirfs_image" style="opacity: 0;"><img src="./files/sab.png" style="border-style: none" width="150"></div>
+                <img src="./files/sab.png" style="border-style: none" width="150">
+            </div>
+            <script type="text/javascript">
+            function sirfs_start() {
+              document.getElementById('sirfs_image').style.opacity = "1";
+            }
+            function sirfs_stop() {
+              document.getElementById('sirfs_image').style.opacity = "0";
+            }
+            sirfs_stop()
+            </script>
+
+          </td>
+        <td width="75%" valign="top">
+        <p>
+          <a href="https://arxiv.org/pdf/1711.02326.pdf" id="SIRFS">
+          <papertitle>Sparse Attentive BackTracking: Long Range Credit Assignment in Recurrent Networks</papertitle>
+          </a>
+          <br>
+          <strong>Nan Rosemary Ke</strong>, Anirudh Goyal, Olexa Bilaniuk, Jonathan Binas, Laurent Charlin, Chris Pal, Yoshua Bengio <br>
+          <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2017<br>, under review for ICLR 2018
+        </p>
+        <p>
+         We learns an attention mechanism
+         over the hidden states in the past and selectively
+         backpropagates through paths with high
+         attention weight. This allows the model to learn
+         long term dependencies while only backtracking
+         for a small number of steps into the past. We think, its an efficient way of doing credit assignment in time.
+        </p>
+        </td>
+       </tr>
 
 
 
@@ -286,43 +322,6 @@ html {
               </p>
               </td>
             </tr>
-
-      <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
-          <td width="25%">
-            <div class="one">
-                <div class="two" id="sirfs_image" style="opacity: 0;"><img src="./files/sab.png" style="border-style: none" width="150"></div>
-                <img src="./files/sab.png" style="border-style: none" width="150">
-            </div>
-            <script type="text/javascript">
-            function sirfs_start() {
-              document.getElementById('sirfs_image').style.opacity = "1";
-            }
-            function sirfs_stop() {
-              document.getElementById('sirfs_image').style.opacity = "0";
-            }
-            sirfs_stop()
-            </script>
-
-          </td>
-        <td width="75%" valign="top">
-        <p>
-          <a href="https://arxiv.org/pdf/1711.02326.pdf" id="SIRFS">
-          <papertitle>Sparse Attentive BackTracking: Long Range Credit Assignment in Recurrent Networks</papertitle>
-          </a>
-          <br>
-          <strong>Nan Rosemary Ke</strong>, Anirudh Goyal, Olexa Bilaniuk, Jonathan Binas, Laurent Charlin, Chris Pal, Yoshua Bengio <br>
-          <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2017<br>, under review for ICLR 2018
-        </p>
-        <p>
-         We learns an attention mechanism
-         over the hidden states in the past and selectively
-         backpropagates through paths with high
-         attention weight. This allows the model to learn
-         long term dependencies while only backtracking
-         for a small number of steps into the past. We think, its an efficient way of doing credit assignment in time.
-        </p>
-        </td>
-      </tr>
 
 
 
