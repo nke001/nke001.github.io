@@ -152,11 +152,6 @@ html {
           <heading>Research</heading>
           <p>
           These days, most of my time goes in thinking how my brain does efficient credit assignment in time ? 
-          For RL problems, I'd like to figure out a method that estimates the gradient of the reward with respect
-          to the action probabilities in a way that mimics some of the fundamental properties of
-          backprop. Backprop works by *composing* local estimates of effects (Jacobians).
-          In general I'm interested in generative models, overcoming catestrophoc forgetting in neural networks, 
-          credit assignment in discrete action space.  
 
           </p>
 
@@ -235,10 +230,10 @@ html {
                 <heading2><i></i></heading2><br>
               <p><a href="">
                 <papertitle>Z Forcing: Training Stochastic RNN's</papertitle></a><br>
-              <strong>Anirudh Goyal*</strong>,
-              Alessandro Sordoni*,
+              Anirudh Goyal,
+              Alessandro Sordoni,
               Marc-Alexandre Côté,
-              Rosemary Nan Ke,
+              <strong>Rosemary Nan Ke</strong>,
               <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
               <em>Neural Information Processing System (NIPS)</em>, 2017 <br>
                 <a href="">arXiv</a>
@@ -273,8 +268,8 @@ html {
               <td valign="top" width="75%">
               <p><a href="">
                 <papertitle>Variational Walkback: Learning a Transition Operator as a Stochastic Recurrent Net</papertitle></a><br>
-              <strong>Anirudh Goyal</strong>,
-              Nan Rosemary Ke, 
+              Anirudh Goyal,
+              <strong>Nan Rosemary Ke</strong>, 
               <a href="https://ganguli-gang.stanford.edu/surya.html">Surya Ganguli</a>,
               <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/
               ">Yoshua Bengio</a> <br>
@@ -315,8 +310,8 @@ html {
           <papertitle>Sparse Attentive BackTracking: Long Range Credit Assignment in Recurrent Networks</papertitle>
           </a>
           <br>
-          Nan Rosemary Ke, <strong>Anirudh Goyal</strong>, Olexa Bilaniuk, Jonathan Binas, Laurent Charlin, Chris Pal, Yoshua Bengio <br>
-          <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2017<br>
+          <strong>Nan Rosemary Ke</strong>, Anirudh Goyal, Olexa Bilaniuk, Jonathan Binas, Laurent Charlin, Chris Pal, Yoshua Bengio <br>
+          <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2017<br>, under review for ICLR 2018
         </p>
         <p>
          We learns an attention mechanism
@@ -354,7 +349,7 @@ html {
               <td valign="top" width="75%">
               <p><a href="https://arxiv.org/abs/1606.01305">
                 <papertitle>Zoneout: Regularizing RNNs by Randomly Preserving Hidden Activations</papertitle></a><br>
-              David Krueger, Tegan Maharaj, Janos Kramar, Mohammad Pezeshki, Nicolas Ballas, Nan Rosemary Ke,<strong> Anirudh Goyal</strong>
+            David Krueger, Tegan Maharaj, Janos Kramar, Mohammad Pezeshki, Nicolas Ballas,<strong>Nan Rosemary Ke</strong>, Anirudh Goyal
               <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
               <a href="https://aaroncourville.wordpress.com/">Aaron Courville</a> <br>
               <a href="www.professeurs.polymtl.ca/christopher.pal/">Chris Pal</a> <br>
@@ -365,80 +360,6 @@ html {
               </p><p></p>
               <p>
               We propose zoneout, a novel method for regularizing RNNs. At each timestep, zoneout stochastically forces some hidden units to maintain their previous values. Like dropout, zoneout uses random noise to train a pseudo-ensemble, improving generalization. But by preserving instead of dropping hidden units, gradient information and state information are more readily propagated through time, as in feedforward stochastic depth networks. 
-              </p>
-              </td>
-            </tr>
-
-
-
-        <tr onmouseout="mpc_stop()" onmouseover="mpc_start()">
-          <td width="25%">
-            <div class="one">
-                <div class="two" id="mpc_image" style="opacity: 0;"><img src="./files/actor_crticic.png" width=150 height=130></div>
-                <img src="./files/actor_crticic.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function mpc_start() {
-              document.getElementById('mpc_image').style.opacity = "1";
-            }
-            function mpc_stop() {
-              document.getElementById('mpc_image').style.opacity = "0";
-            }
-            mpc_stop()
-            </script>
-
-              </td>
-              <td valign="top" width="75%">
-              <p><a href="">
-                <papertitle>An Actor-Critic Algorithm for Sequence Prediction</papertitle></a><br>
-                Dzmitry Bahdanau, Philemon Brakel, Kelvin Xu, <strong>Anirudh Goyal</strong>, Ryan Lowe, <a href="www.cs.mcgill.ca/~jpineau/">Joelle Pineau</a>,
-              <a href="https://aaroncourville.wordpress.com/">Aaron Courville</a>,
-              <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2017 <br> <!-- &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font> <br-->
-                <a href="https://arxiv.org/abs/1607.07086">arXiv</a>
-                /
-                <a href="https://github.com/rizar/actor-critic-public">code</a>
-              </p><p></p>
-              <p>
-              We present an approach to training neural networks to generate sequences using actor-critic methods from reinforcement learning (RL). Current log-likelihood training methods are limited by the discrepancy between their training and testing modes, as models must generate tokens conditioned on their previous guesses rather than the ground-truth tokens. We address this problem by introducing a critic network that is trained to predict the value of an output token, given the policy of an actor network
-              </p>
-              </td>
-            </tr>
-
-
-
-        <tr onmouseout="rfgps_stop()" onmouseover="rfgps_start()">
-          <td width="25%">
-            <div class="one">
-                <div class="two" id="rfgps_image" style="opacity: 0;"><img src="./files/pf_nips16.png" width=150 height=130></div>
-                        <img src="./files/pf_nips16.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function rfgps_start() {
-              document.getElementById('rfgps_image').style.opacity = "1";
-            }
-            function rfgps_stop() {
-              document.getElementById('rfgps_image').style.opacity = "0";
-            }
-            rfgps_stop()
-            </script>
-
-              </td>
-              <td valign="top" width="75%">
-                <p><a href="https://papers.nips.cc/paper/6099-professor-forcing-a-new-algorithm-for-training-recurrent-networks.pdf">
-                <papertitle>Professor Forcing: A New Algorithm for Training Recurrent Networks</papertitle></a><br>
-              <strong>Anirudh Goyal</strong>, Alex Lamb, Ying Zhang, Saizheng Zhang, 
-              <a href="https://aaroncourville.wordpress.com/">Aaron Courville</a>,
-              <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
-              <em> Neural Information on Processing System(NIPS)</em>, 2016 <br> <!-- &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font> <br-->
-                <a href="https://arxiv.org/abs/1610.09038">arXiv</a>
-                /
-                <a href="http://videolectures.net/deeplearning2016_goyal_new_algorithm/">video</a>
-                /
-                <a href="https://github.com/anirudh9119/LM_GANS">code</a>
-              </p><p></p>
-              <p>
-              The Teacher Forcing algorithm trains recurrent networks by supplying observed sequence values as inputs during training and using the network’s own one-step-ahead predictions to do multi-step sampling. We introduce the Professor Forcing algorithm, which uses adversarial domain adaptation to encourage the dynamics of the recurrent network to be the same when training the network and when sampling from the network over multiple time steps.
               </p>
               </td>
             </tr>
