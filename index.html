@@ -138,7 +138,7 @@ html {
               <li> Since December 2017, I am an Expert-in-residence for the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101"> Udacity Deep Learning course</a>.</li>  
               <li> At <a href="www.iclr.cc">ICLR 2018</a>, I co-organized the <a href="http://www.cs.mcgill.ca/~jpineau/ICLR2018-ReproducibilityChallenge.html">ICLR Reproducibility Challenge</a>.</li>
 
-              <li> At <a href="https://icml.cc/Conferences/2017/">ICML 2018</a>, I co-organize a workshop <a href="https://sites.google.com/view/icml-reproducibility-workshop/home">Workshop on Reproducibility in Machine Learning</a>.</li>
+              <li> At <a href="https://icml.cc/Conferences/2017/">ICML 2017</a>, I co-organize a workshop <a href="https://sites.google.com/view/icml-reproducibility-workshop/home">Workshop on Reproducibility in Machine Learning</a>.</li>
               <li> At <a href="https://mila.quebec/en/cours/deep-learning-summer-school-2017/">Deep Learning and Reinforcement Learning Summer School</a>, I founded and co-organized the <a href="">Women in Deep Learning Workshop,</a>.</li> 
             </ul>
         </td></tr>
@@ -212,6 +212,50 @@ html {
               </td>
             </tr>
             -->
+        <tr onmouseout="maml_stop()" onmouseover="maml_start()">
+          <td width="30%">
+            <div class="one">
+                <div class="two" id="maml_image" style="opacity: 0;"><img src="./files/vw.png" width=150 height=130></div>
+                <img src="./files/vw.png" width=150 height=130>
+            </div>
+            <script type="text/javascript">
+            function maml_start() {
+              document.getElementById('maml_image').style.opacity = "1";
+            }
+   function maml_stop() {
+              document.getElementById('maml_image').style.opacity = "0";
+            }
+            maml_stop()
+            </script>
+
+              </td>
+              <td valign="top" width="75%">
+              <p><a href="">
+                <papertitle>Focused Hierarchical RNNs for Conditional Sequence Processing</papertitle></a><br>
+              <strong>Nan Rosemary Ke</strong>,
+              Konrad Zolna, Alessandro Sordoni, Zhouhan Lin, Adam Trischler, Yoshua Bengio, Joelle Pineau, Laurent Charlin, Chris Pal
+              <em>International Conference on Machine Learning (ICML)</em>, 2018 <br>
+                <a href="">arXiv</a>
+                /
+                blog post (coming soon)
+                /
+              </p><p></p>
+              <p>
+                We present a mechanism for focusing
+RNN encoders for sequence modelling tasks
+which allows them to attend to key parts of the
+input as needed. We formulate this using a multilayer
+conditional sequence encoder that reads in
+one token at a time and makes a discrete decision
+on whether the token is relevant to the context
+or question being asked. The discrete gating
+mechanism takes in the context embedding and
+the current hidden state as inputs and controls information
+flow into the layer above.
+              </p>
+              </td>
+            </tr>
+
 
         <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
           <td width="30%">
