@@ -110,13 +110,13 @@ html {
         nan.rosemary.ke at gmail dot com
         </p>
         <p>I am a second year PhD student at the Montreal Institute for Learning Algorithms
-        <a href="http://mila.umontreal.ca">MILA</a>, where I work on deep learning. I am advised by Professor Chris Pal. I recently spent time at Microsoft Research Maluuba.
+        <a href="http://mila.umontreal.ca">MILA</a>, where I work on deep learning. I am advised by Professor Chris Pal. I recently spent time at Microsoft Research, Montreal.
        </p>
        <p>
         Prior to joining MILA, I received a Bachelors in Computer Science at the University of Auckland. I also spent time at Carneigie Mellon University working on speech recognition and deep learning.
         </p>
         <p>
-        I am interested in new ways of training Recurrent Neural Networks, generative models and causal inference learning. I also spend time at Microsoft Research Maluuba, where I work on improved RNN training, generative models and language related research.
+        I am interested in new ways of training Recurrent Neural Networks, generative models and causal inference learning. I also spend time at Microsoft Research, Montreal, where I work on improved RNN training, generative models and language related research.
         </p>
         <p align="center">
 <a href="https://scholar.google.ca/citations?user=dxwPYhQAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
@@ -133,9 +133,12 @@ html {
         <tbody><tr><td>
             <heading>News</heading>
             <ul>
+              <li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I will be co-organize a workshop <a href="https://mltrain.cc/events/enabling-reproducibility-in-machine-learning-mltrainrml-icml-2018/">Workshop on Reproducibility in Machine Learning</a>.</li>
+              <li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I will be co-organize a workshop <a href="https://sites.google.com/view/creditassignmentindlanddrl/home">Workshop on Credit Assignment in Deep Learning and Deep Reinforcement Learning</a>.</li>
               <li> Since December 2017, I am an Expert-in-residence for the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101"> Udacity Deep Learning course</a>.</li>  
-              <li> At <a href="www.iclr.cc">ICLR 2018</a>, I co-organized the <a href="http://www.cs.mcgill.ca/~jpineau/ICLR2018-ReproducibilityChallenge.html">ICLR Reproducibility Challenge</a>.</li>  
-              <li> At <a href="https://icml.cc/Conferences/2017/">ICML 2017</a>, I co-organize a workshop <a href="https://sites.google.com/view/icml-reproducibility-workshop/home">Workshop on Reproducibility in Machine Learning</a>.</li>
+              <li> At <a href="www.iclr.cc">ICLR 2018</a>, I co-organized the <a href="http://www.cs.mcgill.ca/~jpineau/ICLR2018-ReproducibilityChallenge.html">ICLR Reproducibility Challenge</a>.</li>
+
+              <li> At <a href="https://icml.cc/Conferences/2017/">ICML 2018</a>, I co-organize a workshop <a href="https://sites.google.com/view/icml-reproducibility-workshop/home">Workshop on Reproducibility in Machine Learning</a>.</li>
               <li> At <a href="https://mila.quebec/en/cours/deep-learning-summer-school-2017/">Deep Learning and Reinforcement Learning Summer School</a>, I founded and co-organized the <a href="">Women in Deep Learning Workshop,</a>.</li> 
             </ul>
         </td></tr>
@@ -235,8 +238,8 @@ html {
           <papertitle>Sparse Attentive BackTracking: Long Range Credit Assignment in Recurrent Networks</papertitle>
           </a>
           <br>
-          <strong>Nan Rosemary Ke</strong>, Anirudh Goyal, Olexa Bilaniuk, Jonathan Binas, Laurent Charlin, Chris Pal, Yoshua Bengio <br>
-          <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2017<br>, under review for ICLR 2018
+          <strong>Nan Rosemary Ke</strong>, Anirudh Goyal, Olexa Bilaniuk, Jonathan Binas, Laurent Charlin, Mike Mozer, Chris Pal, Yoshua Bengio <br>
+          <em>ICML Workshop on Principled Approaches to Deep Learning</em>, 2018<br>, under review
         </p>
         <p>
         A major drawback of backpropagation through time (BPTT) is the difficulty of learning long-term dependencies, coming from having to propagate credit information backwards through every single step of the forward computation. This makes BPTT both computationally impractical and biologically implausible. For this reason, full backpropagation through time is rarely used on long sequences, and truncated backpropagation through time is used as a heuristic. However, this usually leads to biased estimates of the gradient in which longer term dependencies are ignored. Addressing this issue, we propose an alternative algorithm, Sparse Attentive Backtracking, which might also be related to principles used by brains to learn long-term dependencies. Sparse Attentive Backtracking learns an attention mechanism over the hidden states of the past and selectively backpropagates through paths with high attention weights. This allows the model to learn long term dependencies while only backtracking for a small number of time steps, not just from the recent past but also from attended relevant past states.
