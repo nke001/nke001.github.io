@@ -227,6 +227,25 @@ html {
             }
             maml_stop()
             </script>
+            </td>
+              <td valign="top" width="75%">
+              <p><a href="http://proceedings.mlr.press/v80/ke18a.html">
+                <papertitle>Sparse Attentive Backtracking: Temporal CreditAssignment Through Reminding</papertitle></a><br>
+              <strong>Nan Rosemary Ke</strong>,
+              Anirudh Goyal, Olexa Blanik, Jonathan Binas, Michael Mozer, Chris Pal, Yoshua Bengio
+              <em>The Thirty-second Annual Conference on Neural Information Processing Systems (NIPS) <strong>Spotlight presentation</strong> </em>, 2018 <br>
+              <a href="">Arxiv</a>
+                /
+                blog post (coming soon)
+                /
+              </p><p></p>
+              <p>
+              Learning long-term dependencies in extended temporal sequences requires credit assignment to events far back in the past. The most common method for training recurrent neural networks, back-propagation through time (BPTT), requires credit information to be propagated backwards through every single step of the forward computation, potentially over thousands or millions of time steps.
+              This becomes computationally expensive or even infeasible when used with long sequences. Importantly, biological brains are unlikely to perform such detailed reverse replay over very long sequences of internal states (consider days, months, or years.) However, humans are often reminded of past memories or mental states which are associated with the current mental state.
+              We consider the hypothesis that such memory associations between past and present could be used for credit assignment through arbitrarily long sequences, propagating the credit assigned to the current state to the associated past state. Based on this principle, we study a novel algorithm which only back-propagates through a few of these temporal skip connections, realized by a learned attention mechanism that associates current states with relevant past states. We demonstrate in experiments that our method matches or outperforms regular BPTT and truncated BPTT in tasks involving particularly long-term dependencies, but without requiring the biologically implausible backward replay through the whole history of states. Additionally, we demonstrate that the proposed method transfers to longer sequences significantly better than LSTMs trained with BPTT and LSTMs trained with full self-attention.
+              </p>
+              </td>
+            </tr>
 
               </td>
               <td valign="top" width="75%">
@@ -241,17 +260,7 @@ html {
                 /
               </p><p></p>
               <p>
-                We present a mechanism for focusing
-RNN encoders for sequence modelling tasks
-which allows them to attend to key parts of the
-input as needed. We formulate this using a multilayer
-conditional sequence encoder that reads in
-one token at a time and makes a discrete decision
-on whether the token is relevant to the context
-or question being asked. The discrete gating
-mechanism takes in the context embedding and
-the current hidden state as inputs and controls information
-flow into the layer above.
+                We present a mechanism for focusing RNN encoders for sequence modelling tasks which allows them to attend to key parts of the input as needed. We formulate this using a multilayer conditional sequence encoder that reads in one token at a time and makes a discrete decision on whether the token is relevant to the context or question being asked. The discrete gating mechanism takes in the context embedding and the current hidden state as inputs and controls information flow into the layer above.
               </p>
               </td>
             </tr>
