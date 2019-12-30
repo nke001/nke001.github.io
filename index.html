@@ -109,11 +109,11 @@ html {
         <name>Nan Rosemary Ke</name><br>
         rosemary.nan.ke at gmail dot com
         </p>
-        <p>I am a third year PhD student at 
+        <p>I am a PhD student at 
         <a href="http://mila.umontreal.ca">MILA</a>, where I work on deep learning and deep reinforcement learning. During my PhD, I have spent time at <a href="https://research.fb.com/category/facebook-ai-research/">Facebook AI Research</a>  and <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-montreal/">Microsoft Research, Montreal</a>.
        </p>
         <p>
-        I have a board interest and some of these are efficient credit assignment for deep learning and deep reinforcement learnning, causal induction and inference and how to build better generative models for model-based reinforcement learning.
+        Some of my research interests are efficient credit assignment for deep learning and deep reinforcement learnning, causal learning and  model-based reinforcement learning.
 
 	I have been recently awarded the <a href="https://research.fb.com/blog/2019/01/announcing-the-2019-facebook-fellows-and-emerging-scholars/">Facebook fellowship</a>.
         </p>
@@ -131,7 +131,10 @@ html {
       <table width="120%" align="center" border="0" cellspacing="0" cellpadding="20">
         <tbody><tr><td>
             <heading>News</heading>
-            <ul>
+	    <ul>
+	      <li> At <a href="https://iclr.cc/Conferences/2020">ICLR 2020</a>, we are organizing a workshop <a href="https://sites.google.com/view/causal-learning-icrl2020/home">Causal Learning for decision making</a>.</li>
+	      <li> At <a href="http://www.cosyne.org/c/index.php?title=Cosyne_20">Cosyne 2020</a>, we are organizing a workshop <a href="https://sites.google.com/view/memorymodularityattention/home">Memory, Modularity and Attentiong</a>.</li>
+		<li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I co-organized a workshop <a href="https://mltrain.cc/events/enabling-reproducibility-in-machine-learning-mltrainrml-icml-2018/">Workshop on Reproducibility in Machine Learning</a>.</li>
               <li> Our paper <a href="https://papers.nips.cc/paper/7991-sparse-attentive-backtracking-temporal-credit-assignment-through-reminding.pdf">"Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding” </a></li> received the Nvidia Poineer Award at NeurIPS 2018.
               <li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I co-organized a workshop <a href="https://mltrain.cc/events/enabling-reproducibility-in-machine-learning-mltrainrml-icml-2018/">Workshop on Reproducibility in Machine Learning</a>.</li>
               <li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I co-organized a workshop <a href="https://sites.google.com/view/creditassignmentindlanddrl/home">Workshop on Credit Assignment in Deep Learning and Deep Reinforcement Learning</a>.</li>
@@ -250,8 +253,11 @@ html {
               We consider the hypothesis that such memory associations between past and present could be used for credit assignment through arbitrarily long sequences, propagating the credit assigned to the current state to the associated past state. Based on this principle, we study a novel algorithm which only back-propagates through a few of these temporal skip connections, realized by a learned attention mechanism that associates current states with relevant past states. We demonstrate in experiments that our method matches or outperforms regular BPTT and truncated BPTT in tasks involving particularly long-term dependencies, but without requiring the biologically implausible backward replay through the whole history of states. Additionally, we demonstrate that the proposed method transfers to longer sequences significantly better than LSTMs trained with BPTT and LSTMs trained with full self-attention.
               </p>
               </td>
-            </tr>
-        <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
+    </tr>
+    
+	  
+	    
+    <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
           <td width="30%">
 
             <heading2><i>Publications</i></heading2><br><br>
@@ -288,10 +294,10 @@ html {
                 We present a mechanism for focusing RNN encoders for sequence modelling tasks which allows them to attend to key parts of the input as needed. We formulate this using a multilayer conditional sequence encoder that reads in one token at a time and makes a discrete decision on whether the token is relevant to the context or question being asked. The discrete gating mechanism takes in the context embedding and the current hidden state as inputs and controls information flow into the layer above.
               </p>
               </td>
-            </tr>
+    </tr>
 
 
-        <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
+    <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
           <td width="30%">
             
             
@@ -320,8 +326,7 @@ html {
           <em>International Conference on Learning Representations (ICLR)</em>, 2018<br>
         </p>
         <p>
-        We propose a simple technique for encouraging generative RNNs to plan ahead. 
-We train a “backward” recurrent network to generate a given sequence in reverse
+        We propose a simple technique for encouraging generative RNNs to plan ahead.  We train a “backward” recurrent network to generate a given sequence in reverse
 order, and we encourage states of the forward model to predict cotemporal states
 of the backward model. The backward network is used only during training, and
 plays no role during sampling or inference. We hypothesize that our approach
@@ -330,44 +335,11 @@ to hold information about the longer-term future (as contained in the backward
 states). 
         </p>
         </td>
-      </tr>
+    </tr>
  
     
-    <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
-          <td width="30%">
 
-              <div class="one">
-                <div class="two" id="sirfs_image" style="opacity: 0;"><img src="./files/ethics.png" style="border-style: none" width="150"></div>
-                <img src="./files/ethics.png" style="border-style: none" width="150">
-            </div>
-            <script type="text/javascript">
-            function sirfs_start() {
-              document.getElementById('sirfs_image').style.opacity = "1";
-            }
-            function sirfs_stop() {
-              document.getElementById('sirfs_image').style.opacity = "0";
-            }
-            sirfs_stop()
-            </script>
-
-          </td>
-        <td width="75%" valign="top">
-        <p>
-          <a href="https://arxiv.org/pdf/1711.09050.pdf" id="SIRFS">
-          <papertitle>Ethical Challenges in Dialogue Systems</papertitle>
-          </a>
-          <br>
-          Peter Henderson, Koustav Sinha, Nicolas Gontier,<strong>Nan Rosemary Ke</strong>, Geneive Fried, Ryan Lowe, Joelle Pinea <br>
-          <em>to appear AIES</em>, 2018<br>
-        </p>
-        <p>
-        The use of dialogue systems as a medium for human-machine interaction is an increasingly prevalent paradigm. A growing number of dialogue systems use conversation strategies that are learned from large datasets. There are well documented instances where interactions with these system have resulted in biased or even offensive conversations due to the data-driven training process. Here, we highlight potential ethical issues that arise in dialogue systems research, including: implicit biases in data-driven systems, the rise of adversarial examples, potential sources of privacy violations, safety concerns, special considerations for reinforcement learning systems, and reproducibility concerns. We also suggest areas stemming from these issues that deserve further investigation. Through this initial survey, we hope to spur research leading to robust, safe, and ethically sound dialogue systems.
-        </p>
-        </td>
-      </tr>
-
-
-        <tr onmouseout="place_stop()" onmouseover="place_start()">
+    <tr onmouseout="place_stop()" onmouseover="place_start()">
           <td width="30%">
             <div class="one">
                 <div class="two" id="place_gif" style="opacity: 0;"><img src="./files/z_forcing" width=150 height=150></div>
