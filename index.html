@@ -49,7 +49,9 @@
     .card{border:1px solid var(--border); background:var(--card); border-radius:14px; padding:16px}
 
     /* Publications */
-    .pub{display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:start}
+    $1
+    .pub.spotlight{grid-template-columns:180px 1fr}
+    .pub.spotlight img{width:180px;height:120px;object-fit:cover;border-radius:12px;border:1px solid var(--border)}
     .pub img{width:120px; height:90px; object-fit:cover; border-radius:10px; border:1px solid var(--border)}
     .pub-title{font-weight:700}
     .meta{color:var(--muted)}
@@ -92,7 +94,7 @@
         <p>
           I build <strong>reasoning systems</strong>—for math, code, and decision-making. My recent work focuses on advancing
           the <em>reasoning capabilities of the Gemini family</em>, including Gemini and Gemini&nbsp;2.5, where I have been a key
-          contributor to reasoning research and productization. Previously my research centered on causality &amp; modularity in deep learning;
+          contributor to reasoning research. Previously my research centered on causality &amp; modularity in deep learning;
           today my work is broadly focused on strengthening the reasoning capabilities of large models across many domains.
         </p>
         <p>
@@ -102,19 +104,13 @@
           <a href="https://deepmind.com/">Google DeepMind</a>,
           <a href="https://ai.meta.com/research/">Facebook/Meta AI Research</a>, and
           <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-montreal/">Microsoft Research Montreal</a>.
-          I was named a <a href="https://ml.umd.edu/rising-stars">Rising Star in Machine Learning</a> and a
+          I was named a <a href="https://ml.umd.edu/rising-stars-previous-winners">Rising Star in Machine Learning</a> and a
           <a href="https://www2.eecs.berkeley.edu/risingstars/2020/participants/ke.shtml">Rising Star in EECS</a>, and received the
           <a href="https://research.fb.com/blog/2019/01/announcing-the-2019-facebook-fellows-and-emerging-scholars/">Facebook Fellowship</a>.
         </p>
       </section>
 
-      <section aria-labelledby="news">
-        <h2 id="news">News</h2>
-        <ul>
-          <li>Gave tutorials on <em>Causality &amp; Deep Learning</em> at <a href="https://icml.cc/virtual/2022">ICML&nbsp;2022</a> and <a href="https://www.auai.org/uai2022/tutorials">UAI&nbsp;2022</a>.</li>
-          <li>Invited talks on reasoning/causality at IROS&nbsp;2023, NeurIPS&nbsp;2022, and ICLR&nbsp;2022 workshops (see below).</li>
-        </ul>
-      </section>
+      
 
       <section aria-labelledby="selected">
         <h2 id="selected">Selected Work</h2>
@@ -147,18 +143,38 @@
           <li>NeurIPS 2022 – <em>Learning Neural Causal Models</em> at the <a href="https://www.cml-4-impact.vanderschaar-lab.com/">Causality for Real‑world Impact</a> workshop.</li>
           <li>ICLR 2022 – <em>Modularity, Causality and Deep Learning</em> at the <a href="https://objects-structure-causality.github.io/">Elements of Reasoning</a> workshop.</li>
           <li>CogX 2020 – <em>Causality in Deep Learning</em>. <a href="https://cogx.co/speakers/rosemary-nan-ke/">Speaker page</a>.</li>
+        
+          <li>ICML 2022 – Tutorial: <em>Causality &amp; Deep Learning: Synergies, Challenges and the Future</em>. <a href="https://sites.google.com/view/causalityanddeeplearning/start">Materials</a>.</li>
+          <li>UAI 2022 – Tutorial: <em>Causality &amp; Deep Learning: Synergies, Challenges and the Future</em>. <a href="https://sites.google.com/view/causalityanddeeplearning/start">Materials</a>.</li>
         </ul>
       </section>
 
       <section aria-labelledby="pubs">
-        <h2 id="pubs">Publications (selected)</h2>
+        $1
 
-        <!-- New papers -->
-        <div class="pub card">
-          <img src="./files/gemini25_thumbnail.png" alt="Gemini 2.5 thumbnail" />
+        <!-- Spotlight items -->
+        <div class="pub card spotlight">
+          <img src="./files/gemini25_thumbnail.png" alt="Gemini 2.5 paper thumbnail" />
           <div>
             <div class="pub-title"><a href="https://arxiv.org/abs/2507.06261">Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities</a></div>
             <div><strong>Nan Rosemary Ke</strong>, et al.</div>
+            <div class="meta">arXiv 2025 · <a href="https://arxiv.org/abs/2507.06261">paper</a></div>
+            <p>Advanced reasoning, multimodality, long‑context understanding, and agentic capabilities in the Gemini 2.5 release.</p>
+          </div>
+        </div>
+
+        <div class="pub card spotlight">
+          <img src="./files/imo_blog_thumbnail.png" alt="Gemini achieves IMO gold standard thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">Gemini with DeepThink achieves IMO gold‑medal standard</a></div>
+            <div class="meta">DeepMind Blog · Achievement</div>
+            <p>Highlights Gemini’s mathematical reasoning performance at International Mathematical Olympiad standard.</p>
+          </div>
+        </div>
+
+
+        <!-- New papers -->
+        <div><strong>Nan Rosemary Ke</strong>, et al.</div>
             <div class="meta">arXiv 2025 · <a href="https://arxiv.org/abs/2507.06261">paper</a></div>
           </div>
         </div>
@@ -222,3 +238,4 @@
           <div>
             <div class="pub-title"><a href="https://arxiv.org/abs/1709.02349">A Deep Reinforcement Learning Chatbot</a></div>
             <div>Iulian V.
+
