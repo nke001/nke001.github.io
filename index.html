@@ -1,569 +1,224 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0041)https://people.eecs.berkeley.edu/~barron/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-    a {
-    color: #1772d0;
-    text-decoration:none;
-    }
-    a:focus, a:hover {
-    color: #f09228;
-    text-decoration:none;
-    }
-    body,td,th,tr,p,a {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 16px
-    }
-    strong {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 16px;
-    }
-    heading {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 22px;
-    }
-    heading2 {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 18px;
-    }
-    papertitle {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 700
-    }
-    name {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 42px;
-    }
-    li:not(:last-child) {
-        margin-bottom: 5px;
-    }
-    .one
-    {
-    width: 200px;
-    height: 160px;
-    position: relative;
-    }
-    .two
-    {
-    width: 200px;
-    height: 160px;
-    position: absolute;
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
-    }
-    .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
-    }
-    span.highlight {
-        background-color: #ffffd0;
-    }
-  </style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nan Rosemary Ke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --link:#1772d0;
+      --link-hover:#f09228;
+      --card:#f8fafc;
+      --border:#e5e7eb;
+      --accent:#0ea5e9;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0f14; --text:#e5e7eb; --muted:#9ca3af; --card:#0f1720; --border:#1f2937;
+        --link:#7cc0ff; --link-hover:#ffd38a;
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; font-size:16px; line-height:1.6}
+    a{color:var(--link); text-decoration:none}
+    a:hover,a:focus{color:var(--link-hover)}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+    .identity{display:flex;gap:24px;align-items:center}
+    .avatar{width:160px;height:160px;border-radius:20px;object-fit:cover;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+    h1{font-size:2rem; line-height:1.15; margin:0 0 4px 0}
+    .subtitle{color:var(--muted); font-weight:500}
+    .links{display:flex;gap:14px;flex-wrap:wrap; margin-top:10px}
+    .pill{padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
 
-  <link href="./_files/css" rel="stylesheet" type="text/css">
-  <style id="dark-reader-style" type="text/css">@media screen {
+    main{margin-top:28px}
+    section{margin:32px 0; padding:16px 0; border-top:1px solid var(--border)}
+    section:first-of-type{border-top:none}
+    h2{font-size:1.25rem; margin:0 0 12px 0}
+    p{margin:8px 0}
 
-/* Leading rule */
-html {
-  -webkit-filter: brightness(110%) contrast(90%) grayscale(20%) sepia(10%) !important;
-}
+    .grid{display:grid; grid-template-columns: 1fr; gap:18px}
+    @media(min-width:760px){ .grid{grid-template-columns: 1fr 1fr}}
 
-/* Text contrast */
-html {
-  text-shadow: 0 0 0 !important;
-}
+    .card{border:1px solid var(--border); background:var(--card); border-radius:14px; padding:16px}
 
-/* Full screen */
-*:-webkit-full-screen, *:-webkit-full-screen * {
-  -webkit-filter: none !important;
-}
+    /* Publications */
+    .pub{display:grid; grid-template-columns: 120px 1fr; gap:16px; align-items:start}
+    .pub img{width:120px; height:90px; object-fit:cover; border-radius:10px; border:1px solid var(--border)}
+    .pub-title{font-weight:700}
+    .meta{color:var(--muted)}
+    ul{padding-left:18px; margin:8px 0}
+    li{margin:8px 0}
 
-/* Page background */
-html {
-  background: rgb(255,255,255) !important;
-}
+    /* Nice small badge list */
+    .highlights{display:flex;flex-wrap:wrap; gap:8px}
+    .badge{background:linear-gradient(180deg, #eef6ff, #e9fbff); color:#0b4a6b; padding:6px 10px; border-radius:10px; border:1px solid var(--border)}
+    @media(prefers-color-scheme:dark){ .badge{background:linear-gradient(180deg,#0e1b26,#0b1f26); color:#cde8ff}}
 
-}</style></head>
-  <body><div id="StayFocusd-infobar" style="display: none; top: 2400px;">
-    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
-    <span id="StayFocusd-infobar-msg"></span>
-    <span id="StayFocusd-infobar-links">
-        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a id="StayFocusd-infobar-hide">hide once</a>
-    </span>
-</div>
-  <table width="1000" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tbody><tr>
-    <td>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tbody><tr>
-        <td width="80%" valign="middle">
-        <p align="center">
-        <name>Nan Rosemary Ke</name><br>
-        rosemary.nan.ke at gmail dot com
+    footer{margin:36px 0 12px 0; color:var(--muted); font-size:.95rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="identity">
+        <img class="avatar" src="./files/img.jpg" alt="Portrait of Nan Rosemary Ke" />
+        <div>
+          <h1>Nan Rosemary Ke</h1>
+          <div class="subtitle">Senior Research Scientist, <a href="https://deepmind.google/">Google DeepMind</a></div>
+          <div class="links">
+            <span class="pill">rosemary.nan.ke&nbsp;at&nbsp;gmail&nbsp;dot&nbsp;com</span>
+            <a class="pill" href="https://scholar.google.ca/citations?user=dxwPYhQAAAAJ&hl=en">Google Scholar</a>
+            <a class="pill" href="https://twitter.com/rosemary_ke">Twitter</a>
+          </div>
+          <div class="highlights" style="margin-top:10px">
+            <span class="badge">Key contributor: reasoning in Gemini</span>
+            <span class="badge">Contributor: reasoning in Gemini 2.5</span>
+            <span class="badge">Contributor: IMO efforts</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="about">
+        <h2 id="about">About</h2>
+        <p>
+          I build <strong>reasoning systems</strong>—for math, code, and decision-making. My recent work focuses on advancing
+          the <em>reasoning capabilities of the Gemini family</em>, including Gemini and Gemini&nbsp;2.5, where I have been a key
+          contributor to reasoning research and productization. Previously my research centered on causality &amp; modularity in deep learning;
+          today my work is broadly focused on strengthening the reasoning capabilities of large models across many domains.
         </p>
-        <p>I am a senior research scientist at <a href="https://deepmind.google/">Google Deepmind</a>. I completed my PhD at <a href="https://mila.quebec/en/">Mila</a>  with Professors <a href="https://mila.quebec/en/yoshua-bengio/">Yoshua Bengio</a> and <a href="https://mila.quebec/en/person/pal-christopher/">Chris Pal</a>.</p> 
-
-</p>My research lies at the intersection of causal learning and deep learning. Causal models generalize probabilistic models by adding the capability to infer cause-and-effect relationships among variables and events. Deep learning systems are increasingly being asked to answer questions that are essentially causal in nature. What is the causal effect of an agent's action on the state of the world and its ability to reach a goal? Which genes cause a disease?
-While deep learning is a powerful tool, it can only answer these questions reliably if it is used in a way that has a  causal grounding. My goal is to exploit synergies between causal learning and deep learning, obtaining the inferential strength of causal mechanisms with the scalability and representational capabilities of deep learning.</p>
-  <p>
-During my PhD, I have spent time at <a href="https://deepmind.com/">Google Deepmind</a>,  <a href="https://research.fb.com/category/facebook-ai-research/">Facebook AI Research</a>  and <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-montreal/">Microsoft Research</a>. I have been named a <a href="https://ml.umd.edu/rising-stars"> Rising Star in Machine Learning</a>, a  <a href="https://www2.eecs.berkeley.edu/risingstars/2020/participants/ke.shtml#:~:text=Bio,the%20Facebook%20PhD%20fellowship%20program."> Rising Star in EECS</a>. I have been awarded the <a href="https://research.fb.com/blog/2019/01/announcing-the-2019-facebook-fellows-and-emerging-scholars/">Facebook fellowship</a> from 2019 to 202 from 2019 to 20211.
+        <p>
+          I completed my PhD at <a href="https://mila.quebec/en/">Mila</a> with Professors
+          <a href="https://mila.quebec/en/yoshua-bengio/">Yoshua Bengio</a> and
+          <a href="https://mila.quebec/en/person/pal-christopher/">Chris Pal</a>. During my PhD I also spent time at
+          <a href="https://deepmind.com/">Google DeepMind</a>,
+          <a href="https://ai.meta.com/research/">Facebook/Meta AI Research</a>, and
+          <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-montreal/">Microsoft Research Montreal</a>.
+          I was named a <a href="https://ml.umd.edu/rising-stars">Rising Star in Machine Learning</a> and a
+          <a href="https://www2.eecs.berkeley.edu/risingstars/2020/participants/ke.shtml">Rising Star in EECS</a>, and received the
+          <a href="https://research.fb.com/blog/2019/01/announcing-the-2019-facebook-fellows-and-emerging-scholars/">Facebook Fellowship</a>.
         </p>
-        <p align="center">
-            <a href="https://scholar.google.ca/citations?user=dxwPYhQAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-	    <a href="https://twitter.com/rosemary_ke"> Twitter </a>
-        </p>
-        </td>
-        <td  width=250 height=250>
-        <img src="./files/img.jpg"  width=250 height=250>
-        </td>
-      </tr>
-  </tbody></table>
+      </section>
 
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <tbody><tr><td>
-            <heading>News</heading>
-	    <ul>
-		<li> At <a href="https://icml.cc/virtual/2022">ICML 2022</a>, I gave the tutorial <a href="https://sites.google.com/view/causalityanddeeplearning/start"> Causality and Deep Learning: Synergies, Challenges and the Future</a>. </li>
-		<li> At <a href="https://www.auai.org/uai2022/tutorials">UAI 2022</a>, I gave the tutorial <a href="https://sites.google.com/view/causalityanddeeplearning/start"> Causality and Deep Learning: Synergies, Challenges and the Future</a>. </li> 
-
-          <!--  <li> At <a href="https://icml.cc/virtual/2020">ICML 2020</a>, we organized a workshop on <a href="https://biases-invariances-generalization.github.io/">Inductive Biases, Invariances and Generalization in RL</a>. </li>
-	      <li> At <a href="https://iclr.cc/Conferences/2020">ICLR 2020</a>, we organized a workshop on <a href="https://causalrlworkshop.github.io/">Causal Learning for decision making</a>.</li>
-	      <li> At <a href="http://www.cosyne.org/c/index.php?title=Cosyne_20">Cosyne 2020</a>, we organized a workshop on <a href="https://sites.google.com/view/memorymodularityattention/home">Memory, Modularity and Attentiong</a>.</li>
-	      <li> Our paper <a href="https://arxiv.org/abs/2008.09301">Amortized learning of neural causal representations</a> which introduces a novel neural network architecture for learning a fully continous representation of causal models is now on arxiv.  </li>
-          <li> Our paper <a href="https://arxiv.org/abs/1910.01075">learning neural causal models from unknown interventions</a> using continuous optimization is now on arxiv.  </li>
-	      	<li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I co-organized a workshop <a href="https://mltrain.cc/events/enabling-reproducibility-in-machine-learning-mltrainrml-icml-2018/">Workshop on Reproducibility in Machine Learning</a>.</li>
-                <li> Our paper <a href="https://papers.nips.cc/paper/7991-sparse-attentive-backtracking-temporal-credit-assignment-through-reminding.pdf">"Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding” </a></li> received the Nvidia Poineer Award at NeurIPS 2018.  
-              <li> At <a href="https://icml.cc/Conferences/2018/">ICML 2018</a>, I co-organized a workshop <a href="https://sites.google.com/view/creditassignmentindlanddrl/home">Workshop on Credit Assignment in Deep Learning and Deep Reinforcement Learning</a>.</li>
-	      -->
-              <!-- <li> At <a href="www.iclr.cc">ICLR 2018</a>, I co-organized the <a href="http://www.cs.mcgill.ca/~jpineau/ICLR2018-ReproducibilityChallenge.html">ICLR Reproducibility Challenge</a>.</li>
-
-              <li> At <a href="https://icml.cc/Conferences/2017/">ICML 2017</a>, I co-organize a workshop <a href="https://sites.google.com/view/icml-reproducibility-workshop/home">Workshop on Reproducibility in Machine Learning</a>.</li>
-              <li> At <a href="https://mila.quebec/en/cours/deep-learning-summer-school-2017/">Deep Learning and Reinforcement Learning Summer School</a>, I founded and co-organized the <a href="">Women in Deep Learning Workshop,</a>.</li> 
-	      -->
-	    </ul>
-        </td></tr>
-
-        <tr><td>
-            <heading>Invited Talks</heading>
-            <ul>
-	<li> At <a href="https://ieee-iros.org/">IROS 2023</a>, I gave an invited talk on Learning to Learn Causal Structure in Reinforcement Learning  at the <a href="https://sites.google.com/view/iros23-causal-robots"> Causality for Robotics workshop</a>. </li>
-	<li> At <a href="https://nips.cc/Conferences/2022">NeurIPS 2022 </a>, I gave an invited talk on Learning Neural Causal Models at the <a href="https://www.cml-4-impact.vanderschaar-lab.com/"> NeurIPS 2022 Workshop on Causality for Real-world Impact </a>. </li>
-        <li> At <a href="https://iclr.cc/Conferences/2022">ICLR 2022 </a>, I gave an invited talk on Modularity, Causality and Deep learning at the <a href="https://objects-structure-causality.github.io/#:~:text=ICLR%202022%20Workshop%20on%20the,Reasoning%3A%20Objects%2C%20Structure%20and%20Causality&text=Discrete%20abstractions%20such%20as%20objects,reason%20about%20their%20causal%20structure."> ICLR Workshop on the Elements of Reasoning: Objects, Structure, and Causality </a>. </li>
-
-	<li> I gave an invited talk at CogX 2020 on <a href="https://cogx.co/speakers/rosemary-nan-ke/">"Causality in Deep Learning” </a> to discuss how to incorrporate causality with deep learning to achieve better systematic generalization. </li>
-	<!--	<li> I gave a talk at "Theory of deep learning: where next". IAS, Princeton University, on our recent work <a href="https://video.ias.edu/theorydeeplearning/2019/1017-Various"> "Learning Neural causal model under unknown interventions” </a>.</li>
-        <li> I gave a talk at Nvidia GTC 2019 on <a href="https://www.facebook.com/nipsfoundation/videos/session-2-room-220-cd/1914579825246403/">"Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding” </a></li>
-        <li> I gave a spotlight talk at NeurIPS 2018 on <a href="https://www.facebook.com/nipsfoundation/videos/1914579825246403">"Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding” </a></li>
-        
-        <li> At ICML 2018, I gave a talk on my recent work <a href="https://videoken.com/embed/KAuEIw9dd0w">”Focused Hierarchical RNNs for Conditional Sequence Processing” </a></li>
-                <li> In Oct 2017, I gave a talk on my work:<a href="https://openreview.net/pdf?id=BydLzGb0Z">”Twin Networks: Using the Future to generate sequences”</a></li>
-              	<li> In Sep 2017, I gave a talk on my work: ””Hierachical Attention for sequence to sequence networks” at the Deep Language Workshop organized by MILA and Microsoft Research</a>. </li>
-             	<li> In Jun 2017, I gave a talk on my work:<a href="https://arxiv.org/pdf/1711.04755.pdf">”ACTUAL: Actor-Critic Under Adversarial Learning”</a> at the Deep Learning and Reinforcement Leanrning Summer School</li>
-              	<li> In Jun 2017, I gave a talk on my work:<a href="https://arxiv.org/pdf/1711.04755.pdf">”Hierachical Attention for sequence to sequence networks”,”</a> at the Samsung Workshop at University of Montreal</li>
-              	<li> In Aug 2016, I gave an invited talk on <a href="https://www.perimeterinstitute.ca/videos/deep-learning-overview">”Deep Learning: An Overview”</a> at the Quantumn Machine Learning Workshop at Priemeter Insitute for Theoretical Physics</li>
-             
-              <li> In Sep 2016, I gave a talk on my work:<a href="https://arxiv.org/pdf/1711.04755.pdf">”Reviving the past: Training undirected graphical models”</a> at the 5th IBM ResearchCognitive Colloquium</li>
-            -->    
+      <section aria-labelledby="news">
+        <h2 id="news">News</h2>
+        <ul>
+          <li>Gave tutorials on <em>Causality &amp; Deep Learning</em> at <a href="https://icml.cc/virtual/2022">ICML&nbsp;2022</a> and <a href="https://www.auai.org/uai2022/tutorials">UAI&nbsp;2022</a>.</li>
+          <li>Invited talks on reasoning/causality at IROS&nbsp;2023, NeurIPS&nbsp;2022, and ICLR&nbsp;2022 workshops (see below).</li>
         </ul>
-        </td></tr>
+      </section>
 
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Research</heading>
-          <p>
-        My research interest lies in the intersection of deep learning learning and causality.
-          </p>
-
-        </td>
-      </tr>
-     </tbody></table>
-
-     <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-
-        <tr onmouseout="maml_stop()" onmouseover="maml_start()">
-          <td width="25%">
-            <div class="one">
-                <div class="two" id="maml_image" style="opacity: 0;"><img src="./files/learning_causal.png" width=150 height=140></div>
-                <img src="./files/learning_causal.png" width=150 height=140>
+      <section aria-labelledby="selected">
+        <h2 id="selected">Selected Work</h2>
+        <div class="grid">
+          <div class="card pub">
+            <img src="./files/learning_causal.png" alt="Learning to induce causal structure thumbnail" />
+            <div>
+              <div class="pub-title"><a href="https://openreview.net/pdf?id=hp_RwhKDJ5">Learning to Induce Causal Structure</a></div>
+              <div>Nan Rosemary Ke, Silvia Chiappa, Jane Wang, Anirudh Goyal, Jörg Bornschein, Mélanie Rey, Theophane Weber, Matthew Botvinick, Michael Mozer, Danilo Rezende.</div>
+              <p>Neural architectures that infer causal graphs from observational and interventional data with strong generalization to new graphs and naturalistic settings.</p>
+              <div class="meta"><a href="https://openreview.net/pdf?id=hp_RwhKDJ5">paper</a></div>
             </div>
-            <script type="text/javascript">
-            function maml_start() {
-              document.getElementById('maml_image').style.opacity = "1";
-            }
-   function maml_stop() {
-              document.getElementById('maml_image').style.opacity = "0";
-            }
-            maml_stop()
-            </script>
-              </td>
-              <td valign="top" width="75%">
-                <heading2><i></i></heading2><br>
-              <p><a href="https://openreview.net/pdf?id=hp_RwhKDJ5">
-                <papertitle>Learning to induce causal structure.</papertitle></a><br>
-              <strong>Nan Rosemary Ke</strong>, Silvia Chiappa, Jane Wang, Anirudh Goyal, Jorg Bornschein, Melanie Rey, Theophane Weber, Matthew Botvinick, Michael Mozer, Danilo Jimenez Rezende 
-		<a href="https://openreview.net/pdf?id=hp_RwhKDJ5">paper</a>
-              </p><p></p>
-              <p>One of the fundamental challenges in causal induction is to infer the underlying graph structure given observational and/or interventional data. Most existing causal induction algorithms operate by generating candidate graphs and evaluating them using either score-based methods (including continuous optimization) or independence tests. In our work, we instead treat the inference process as a black box and design a neural network architecture that learns the mapping from both observational and interventional data to graph structures via supervised training on synthetic graphs. The learned model generalizes to new synthetic graphs, is robust to train-test distribution shifts, and achieves state-of-the-art performance on naturalistic graphs for low sample complexity. 
-              </p>
-              </td>
-            </tr>
-	<!--<tr onmouseout="maml_stop()" onmouseover="maml_start()">
-          <td width="25%">
-            <heading2><i>Recent Preprints</i></heading2><br><br>
-            <div class="one">
-                <div class="two" id="maml_image" style="opacity: 0;"><img src="./_files/maml_diagram.png" width=150 height=140></div>
-                <img src="./files/learning_causal.png" width=150 height=140>
+          </div>
+
+          <div class="card pub">
+            <img src="./files/sab.png" alt="Sparse Attentive Backtracking thumbnail" />
+            <div>
+              <div class="pub-title"><a href="https://arxiv.org/abs/1809.03702">Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding</a></div>
+              <div>Nan Rosemary Ke, Anirudh Goyal, Olexa Bilaniuk, Jonathan Binas, Michael Mozer, Chris Pal, Yoshua Bengio.</div>
+              <div class="meta">NeurIPS 2018 <strong>Spotlight</strong></div>
             </div>
-            <script type="text/javascript">
-            function maml_start() {
-              document.getElementById('maml_image').style.opacity = "1";
-            }
-   function maml_stop() {
-              document.getElementById('maml_image').style.opacity = "0";
-            }
-            maml_stop()
-            </script>
-              </td>
-              <td valign="top" width="75%">
-                <heading2><i></i></heading2><br>
-              <p><a href="https://arxiv.org/pdf/1703.03400.pdf">
-                <papertitle>Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</papertitle></a><br>
-              <strong>Chelsea Finn</strong>,
-              <a href="http://people.eecs.berkeley.edu/~pabbeel">Pieter Abbeel</a>,
-              <a href="http://people.eecs.berkeley.edu/~svlevine">Sergey Levine</a> <br>
-                <a href="https://arxiv.org/abs/1703.03400">arXiv</a>
-                /
-                <a href="https://github.com/cbfinn/maml">code</a>
-                /
-                <a href="https://sites.google.com/view/maml">video results</a>
-              </p><p></p>
-              <p/> We propose a model-agnostic algorithm for meta-learning, where a model's parameters
-              are trained such that a small number of gradient updates with a small amount of training data from a new task
-              will produce good generalization performance on that task. Our method learns a classifier that can recognize
-              images of new characters using only a few examples, and a policy that c
-		</p>
-              </td>
-            </tr> -->
-        <tr onmouseout="maml_stop()" onmouseover="maml_start()">
-          <td width="30%">
-            <div class="one">
-                <div class="two" id="maml_image" style="opacity: 0;"><img src="./files/sab.png" width=150 height=130></div>
-                <img src="./files/sab.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function maml_start() {
-              document.getElementById('maml_image').style.opacity = "1";
-            }
-   function maml_stop() {
-              document.getElementById('maml_image').style.opacity = "0";
-            }
-            maml_stop()
-            </script>
+          </div>
+        </div>
+      </section>
 
-            </td>
-              <td valign="top" width="75%">
-              <p><a href="https://arxiv.org/pdf/1809.03702.pdf">
-                <papertitle>Sparse Attentive Backtracking: Temporal Credit Assignment Through Reminding</papertitle></a><br>
-              <strong>Nan Rosemary Ke</strong>,
-              Anirudh Goyal, Olexa Blanik, Jonathan Binas, Michael Mozer, Chris Pal, Yoshua Bengio
+      <section aria-labelledby="talks">
+        <h2 id="talks">Invited Talks</h2>
+        <ul>
+          <li>IROS 2023 – <em>Learning to Learn Causal Structure in Reinforcement Learning</em> at the <a href="https://sites.google.com/view/iros23-causal-robots">Causality for Robotics</a> workshop.</li>
+          <li>NeurIPS 2022 – <em>Learning Neural Causal Models</em> at the <a href="https://www.cml-4-impact.vanderschaar-lab.com/">Causality for Real‑world Impact</a> workshop.</li>
+          <li>ICLR 2022 – <em>Modularity, Causality and Deep Learning</em> at the <a href="https://objects-structure-causality.github.io/">Elements of Reasoning</a> workshop.</li>
+          <li>CogX 2020 – <em>Causality in Deep Learning</em>. <a href="https://cogx.co/speakers/rosemary-nan-ke/">Speaker page</a>.</li>
+        </ul>
+      </section>
 
+      <section aria-labelledby="pubs">
+        <h2 id="pubs">Publications (selected)</h2>
 
-              <em>The Thirty-second Annual Conference on Neural Information Processing Systems (NeuIPS) <strong>Spotlight presentation</strong> </em>, 2018 <br>
-              <a href="">Arxiv</a>
-                /
-                blog post (coming soon)
-                /
-              </p><p></p>
-              <p>
-              Learning long-term dependencies in extended temporal sequences requires credit assignment to events far back in the past. The most common method for training recurrent neural networks, back-propagation through time (BPTT), requires credit information to be propagated backwards through every single step of the forward computation, potentially over thousands or millions of time steps.
-              This becomes computationally expensive or even infeasible when used with long sequences. Importantly, biological brains are unlikely to perform such detailed reverse replay over very long sequences of internal states (consider days, months, or years.) However, humans are often reminded of past memories or mental states which are associated with the current mental state.
-              We consider the hypothesis that such memory associations between past and present could be used for credit assignment through arbitrarily long sequences, propagating the credit assigned to the current state to the associated past state. Based on this principle, we study a novel algorithm which only back-propagates through a few of these temporal skip connections, realized by a learned attention mechanism that associates current states with relevant past states. We demonstrate in experiments that our method matches or outperforms regular BPTT and truncated BPTT in tasks involving particularly long-term dependencies, but without requiring the biologically implausible backward replay through the whole history of states. Additionally, we demonstrate that the proposed method transfers to longer sequences significantly better than LSTMs trained with BPTT and LSTMs trained with full self-attention.
-              </p>
-              </td>
-    </tr>
-    
-	  
-	    
-    <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
-          <td width="30%">
+        <!-- New papers -->
+        <div class="pub card">
+          <img src="./files/gemini25_thumbnail.png" alt="Gemini 2.5 thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2507.06261">Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities</a></div>
+            <div><strong>Nan Rosemary Ke</strong>, et al.</div>
+            <div class="meta">arXiv 2025 · <a href="https://arxiv.org/abs/2507.06261">paper</a></div>
+          </div>
+        </div>
 
-            <heading2><i>Publications</i></heading2><br><br>
-             <div class="one">
-                <div class="two" id="sirfs_image" style="opacity: 0;"><img src="./files/sab.png" style="border-style: none" width="150"></div>
-                <img src="./files/sab.png" style="border-style: none" width="150">
-            </div>
-            <script type="text/javascript">
-            function sirfs_start() {
-              document.getElementById('sirfs_image').style.opacity = "1";
-            }
-            function sirfs_stop() {
-              document.getElementById('sirfs_image').style.opacity = "0";
-            }
-            sirfs_stop()
-            </script>
+        <div class="pub card">
+          <img src="./files/metacognitive_llm_thumbnail.png" alt="Metacognitive Capabilities thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/2318d75a06437eaa257737a5cf3ab83c-Abstract-Conference.html">Metacognitive Capabilities of LLMs: An Exploration in Mathematical Problem Solving</a></div>
+            <div><strong>Nan Rosemary Ke</strong>, et al.</div>
+            <div class="meta">NeurIPS 2024 · <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/2318d75a06437eaa257737a5cf3ab83c-Abstract-Conference.html">paper</a></div>
+          </div>
+        </div>
 
+        <div class="pub card">
+          <img src="./files/scaling_instructable_agents_thumbnail.png" alt="Scaling Instructable Agents thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2404.10179">Scaling Instructable Agents Across Many Simulated Worlds</a></div>
+            <div><strong>Nan Rosemary Ke</strong>, et al.</div>
+            <div class="meta">arXiv 2024 · <a href="https://arxiv.org/abs/2404.10179">paper</a></div>
+          </div>
+        </div>
 
-              </td>
-              <td valign="top" width="75%">
-              <p><a href="http://proceedings.mlr.press/v80/ke18a.html">
-                <papertitle>Focused Hierarchical RNNs for Conditional Sequence Processing</papertitle></a><br>
-              <strong>Nan Rosemary Ke</strong>,
-              Konrad Zolna, Alessandro Sordoni, Zhouhan Lin, Adam Trischler, Yoshua Bengio, Joelle Pineau, Laurent Charlin, Chris Pal
-              
-              
-              <em>International Conference on Machine Learning (ICML)</em>, 2018 <br>
-              <a href="http://proceedings.mlr.press/v80/ke18a.html">Arxiv</a>
-                /
-                blog post (coming soon)
-                /
-              </p><p></p>
-              <p>
-                We present a mechanism for focusing RNN encoders for sequence modelling tasks which allows them to attend to key parts of the input as needed. We formulate this using a multilayer conditional sequence encoder that reads in one token at a time and makes a discrete decision on whether the token is relevant to the context or question being asked. The discrete gating mechanism takes in the context embedding and the current hidden state as inputs and controls information flow into the layer above.
-              </p>
-              </td>
-    </tr>
+        <div class="pub card" id="pub-fhrnn">
+          <img src="./files/learning_causal.png" alt="Focused Hierarchical RNNs thumbnail" />
+          <div>
+            <div class="pub-title"><a href="http://proceedings.mlr.press/v80/ke18a.html">Focused Hierarchical RNNs for Conditional Sequence Processing</a></div>
+            <div><strong>Nan Rosemary Ke</strong>, Konrad Zolna, Alessandro Sordoni, Zhouhan Lin, Adam Trischler, Yoshua Bengio, Joelle Pineau, Laurent Charlin, Chris Pal.</div>
+            <div class="meta">ICML 2018 · <a href="http://proceedings.mlr.press/v80/ke18a.html">paper</a></div>
+          </div>
+        </div>
 
+        <div class="pub card" id="pub-twin">
+          <img src="./files/twin.png" alt="Twin Networks thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://openreview.net/pdf?id=BydLzGb0Z">Twin Networks: Using the Future to Generate Sequences</a></div>
+            <div><strong>Nan Rosemary Ke*</strong>, Dmitry Serdyuk*, Alessandro Sordoni, Adam Trischler, Chris Pal, Yoshua Bengio.</div>
+            <div class="meta">ICLR 2018 · <a href="https://openreview.net/pdf?id=BydLzGb0Z">paper</a></div>
+          </div>
+        </div>
 
-    <tr onmouseout="sirfs_stop()" onmouseover="sirfs_start()">
-          <td width="30%">
-            
-            
-              <div class="one">
-                <div class="two" id="sirfs_image" style="opacity: 0;"><img src="./files/twin.png" style="border-style: none" width="150"></div>
-                <img src="./files/twin.png" style="border-style: none" width="150">
-            </div>
-            <script type="text/javascript">
-            function sirfs_start() {
-              document.getElementById('sirfs_image').style.opacity = "1";
-            }
-            function sirfs_stop() {
-              document.getElementById('sirfs_image').style.opacity = "0";
-            }
-            sirfs_stop()
-            </script>
+        <div class="pub card" id="pub-zforcing">
+          <img src="./files/z_forcing.png" alt="Z‑Forcing thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/1711.05411">Z‑Forcing: Training Stochastic RNNs</a></div>
+            <div>Anirudh Goyal, Alessandro Sordoni, Marc‑Alexandre Côté, <strong>Rosemary Nan Ke</strong>, Yoshua Bengio.</div>
+            <div class="meta">NeurIPS 2017 · <a href="https://arxiv.org/abs/1711.05411">arXiv</a></div>
+          </div>
+        </div>
 
-          </td>
-        <td width="75%" valign="top">
-        <p>
-          <a href="https://openreview.net/pdf?id=BydLzGb0Z" id="SIRFS">
-          <papertitle>Twin Networks: Using the future to generate sequences</papertitle>
-          </a>
-          <br>
-          <strong>Nan Rosemary Ke*</strong>, Dmitry Serdyuk*, Alessandro Sordoni, Adam Trischler, Chris Pal, Yoshua Bengio <br>
-          <em>International Conference on Learning Representations (ICLR)</em>, 2018<br>
-        </p>
-        <p>
-        We propose a simple technique for encouraging generative RNNs to plan ahead.  We train a “backward” recurrent network to generate a given sequence in reverse
-order, and we encourage states of the forward model to predict cotemporal states
-of the backward model. The backward network is used only during training, and
-plays no role during sampling or inference. We hypothesize that our approach
-eases modeling of long-term dependencies by implicitly forcing the forward states
-to hold information about the longer-term future (as contained in the backward
-states). 
-        </p>
-        </td>
-    </tr>
- 
-    
+        <div class="pub card" id="pub-vwalkback">
+          <img src="./files/vw.png" alt="Variational Walkback thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://papers.nips.cc/paper/7026-variational-walkback-learning-a-transition-operator-as-a-stochastic-recurrent-net">Variational Walkback: Learning a Transition Operator as a Stochastic Recurrent Net</a></div>
+            <div>Anirudh Goyal, <strong>Nan Rosemary Ke</strong>, Surya Ganguli, Yoshua Bengio.</div>
+            <div class="meta">NeurIPS 2017 · <a href="https://arxiv.org/pdf/1711.02282.pdf">arXiv</a> · <a href="https://github.com/anirudh9119/walkback_nips17">code</a></div>
+          </div>
+        </div>
 
-    <tr onmouseout="place_stop()" onmouseover="place_start()">
-          <td width="30%">
-            <div class="one">
-                <div class="two" id="place_gif" style="opacity: 0;"><img src="./files/z_forcing" width=150 height=150></div>
-                <img src="./files/z_forcing.png" width=150 height=150>
-            </div>
-            <script type="text/javascript">
-            function place_start() {
-              document.getElementById('place_gif').style.opacity = "1";
-            }
-   function place_stop() {
-              document.getElementById('place_gif').style.opacity = "0";
-            }
-            place_stop()
-            </script>
-
-              </td>
-              <td valign="top" width="75%">
-                <heading2><i></i></heading2><br>
-              <p><a href="https://arxiv.org/pdf/1711.05411.pdf">
-                <papertitle>Z Forcing: Training Stochastic RNN's</papertitle></a><br>
-              Anirudh Goyal,
-              Alessandro Sordoni,
-              Marc-Alexandre Côté,
-              <strong>Rosemary Nan Ke</strong>,
-              <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
-              <em>Neural Information Processing System (NIPS)</em>, 2017 <br>
-                <a href="">arXiv</a>
-                /
-                code (coming soon)
-              </p><p></p>
-              <p> 
-              We proposed a novel approach to incorporate stochastic latent variables in sequential neural networks. The method builds on recent architectures that use latent variables to condition the recurrent dynamics of the network. We augmented the inference network with an RNN that runs backward through the sequence and added a new auxiliary cost that forces the latent variables to reconstruct the state of  that backward RNN, i.e. predict a summary of future observations.
-              </p>
-              </td>
-            </tr>
-
-
-
-        <tr onmouseout="maml_stop()" onmouseover="maml_start()">
-          <td width="30%">
-            <div class="one">
-                <div class="two" id="maml_image" style="opacity: 0;"><img src="./files/vw.png" width=150 height=130></div>
-                <img src="./files/vw.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function maml_start() {
-              document.getElementById('maml_image').style.opacity = "1";
-            }
-   function maml_stop() {
-              document.getElementById('maml_image').style.opacity = "0";
-            }
-            maml_stop()
-            </script>
-
-              </td>
-              <td valign="top" width="75%">
-              <p><a href="https://papers.nips.cc/paper/7026-variational-walkback-learning-a-transition-operator-as-a-stochastic-recurrent-net">
-                <papertitle>Variational Walkback: Learning a Transition Operator as a Stochastic Recurrent Net</papertitle></a><br>
-              Anirudh Goyal,
-              <strong>Nan Rosemary Ke</strong>, 
-              <a href="https://ganguli-gang.stanford.edu/surya.html">Surya Ganguli</a>,
-              <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/
-              ">Yoshua Bengio</a> <br>
-              <em>Neural Information Processing System (NIPS)</em>, 2017 <br>
-                <a href="https://arxiv.org/pdf/1711.02282.pdf">arXiv</a>
-                /
-                blog post (coming soon)
-                /
-                <a href="https://github.com/anirudh9119/walkback_nips17">code</a> 
-              </p><p></p>
-              <p> 
-               We propose a novel method to directly learn a stochastic transition operator whose repeated application provides generated samples. Traditional undirected graphical models approach this problem indirectly by learning a Markov chain model whose stationary distribution obeys detailed balance with respect to a parameterized energy function.
-
-              </p>
-              </td>
-            </tr>
-
-
-        <tr onmouseout="ssrl_stop()" onmouseover="ssrl_start()">
-          <td width="30%">
-
-                  <heading2><i></i></heading2><br>
-            <div class="one">
-                <div class="two" id="ssrl_image" style="opacity: 0;"><img src="./files/chatbot.png" width=150 height=130></div>
-                <img src="./files/chatbot.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function ssrl_start() {
-              document.getElementById('ssrl_image').style.opacity = "1"; 
-            }   
-            function ssrl_stop() {
-              document.getElementById('ssrl_image').style.opacity = "0";
-            } 
-            ssrl_stop()
-            </script>
-
-              </td>
-              <td valign="top" width="75%">
-              <p><a href="https://arxiv.org/pdf/1709.02349.pdf">
-                <papertitle>A Deep Reinforcement Learning Chatbot</papertitle></a><br>
-            Iulian V. Serban, Chinnadhurai Sankar, Mathieu Germain, Saizheng Zhang, Zhouhan Lin,
-Sandeep Subramanian, Taesup Kim, Michael Pieper, Sarath Chandar, <strong> Nan Rosemary Ke</strong>,
-Sai Rajeshwar, Alexandre de Brebisson, Jose M. R. Sotelo, Dendi Suhubdy,
-Vincent Michalski, Alexandre Nguyen, Joelle Pineau and <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
-              <em>International Conference on Learning Representations (ICLR)</em>, 2017 <br> <!-- &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font> <br-->
-                <a href="https://arxiv.org/abs/1606.01305">arXiv</a>
-              </p><p></p>
-              <p>
-              We present MILABOT: a deep reinforcement learning chatbot developed by the Montreal Institute for Learning Algorithms (MILA) for the Amazon Alexa Prize competition. MILABOT is capable of conversing with humans on popular small talk topics through both speech and text. The system consists of an ensemble of natural language generation and retrieval models, including template-based models, bag-of-words models, sequence-to-sequence neural network and latent variable neural network models. By applying reinforcement learning to crowdsourced data and real-world user interactions, the system has been trained to select an appropriate response from the models in its ensemble. The system has been evaluated through A/B testing with real-world users, where it performed significantly better than many competing systems. Due to its machine learning architecture, the system is likely to improve with additional data.
-              </p>
-              </td>
-            </tr>
-
-
-        <tr onmouseout="ssrl_stop()" onmouseover="ssrl_start()">
-          <td width="30%">
-
-                  <heading2><i></i></heading2><br>
-            <div class="one">
-                <div class="two" id="ssrl_image" style="opacity: 0;"><img src="./files/zoneout.png" width=150 height=130></div>
-                <img src="./files/zoneout.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function ssrl_start() {
-              document.getElementById('ssrl_image').style.opacity = "1";
-            }
-            function ssrl_stop() {
-              document.getElementById('ssrl_image').style.opacity = "0";
-            }
-            ssrl_stop()
-            </script>
-
-              </td>
-              <td valign="top" width="75%">
-              <p><a href="https://arxiv.org/abs/1606.01305">
-                <papertitle>Zoneout: Regularizing RNNs by Randomly Preserving Hidden Activations</papertitle></a><br>
-            David Krueger, Tegan Maharaj, Janos Kramar, Mohammad Pezeshki, Nicolas Ballas,<strong>Nan Rosemary Ke</strong>, Anirudh Goyal
-              <a href="www.iro.umontreal.ca/~bengioy/yoshua_en/">Yoshua Bengio</a>,
-              <a href="https://aaroncourville.wordpress.com/">Aaron Courville</a> <br>
-              <a href="www.professeurs.polymtl.ca/christopher.pal/">Chris Pal</a> <br>
-              <em>International Conference on Learning Representations (ICLR)</em>, 2017 <br> <!-- &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font> <br-->
-                <a href="https://arxiv.org/abs/1606.01305">arXiv</a>
-                /
-                <a href="https://github.com/teganmaharaj/zoneout">code</a>
-              </p><p></p>
-              <p>
-              We propose zoneout, a novel method for regularizing RNNs. At each timestep, zoneout stochastically forces some hidden units to maintain their previous values. Like dropout, zoneout uses random noise to train a pseudo-ensemble, improving generalization. But by preserving instead of dropping hidden units, gradient information and state information are more readily propagated through time, as in feedforward stochastic depth networks. 
-              </p>
-              </td>
-            </tr>
-
-   <tr onmouseout="ssrl_stop()" onmouseover="ssrl_start()">
-          
-	   <!--<td width="30%">
-            <heading2><i></i></heading2><br>
-            <div class="one">
-                <div class="two" id="ssrl_image" style="opacity: 0;"><img src="./files/bandit.png" width=150 height=130></div>
-                <img src="./files/bandit.png" width=150 height=130>
-            </div>
-            <script type="text/javascript">
-            function ssrl_start() {
-              document.getElementById('ssrl_image').style.opacity = "1";
-            }
-            function ssrl_stop() {
-              document.getElementById('ssrl_image').style.opacity = "0";
-            }
-            ssrl_stop()
-            </script>
-
-              </td>
-              
-	      <td valign="top" width="75%">
-              <p><a href="https://arxiv.org/pdf/1603.05359.pdf">
-                <papertitle>Cascading Bandits for Large-Scale Recommendation Problems</papertitle></a><br>
-            Shi Zong, Hao Ni, Kenny Sung, <strong>Nan Rosemary Ke</strong>, Zheng Wen, Branislav Kveton
-	    <em>Association for Uncertainty in Artificial Intelligence (UAI)</em>, 2016 <br> --> <!-- &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font> <br-->
-              <!--  <a href="https://arxiv.org/pdf/1603.05359.pdf">arXiv</a>
-              </p><p></p>
-              <p>
-             Most recommender systems recommend a list of items. The user examines the list, from the first item to the last, and often chooses the first attractive item and does not examine the rest. This type of user behavior can be modeled by the cascade model. In this work, we study cascading bandits, an online learning variant of the cascade model where the goal is to recommend K most attractive items from a large set of L candidate items. We propose two algorithms for solving this problem, which are based on the idea of linear generalization. The key idea in our solutions is that we learn a predictor of the attraction probabilities of items from their features, as opposing to learning the attraction probability of each item independently as in the existing work. This results in practical learning algorithms whose regret does not depend on the number of items L. We bound the regret of one algorithm and comprehensively evaluate the other on a range of recommendation problems. The algorithm performs well and outperforms all baselines 
-            </p>
-              </td>
-            </tr>
-	    -->
-      </tbody></table>
-
-    </td>
-    </tr>
-  </tbody></table>
-
-
-</body></html>
+        <div class="pub card" id="pub-chatbot">
+          <img src="./files/chatbot.png" alt="Chatbot thumbnail" />
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/1709.02349">A Deep Reinforcement Learning Chatbot</a></div>
+            <div>Iulian V.
